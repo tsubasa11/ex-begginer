@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+/**ユーザー登録画面*/
 @Controller
 @RequestMapping("/exam04")
 public class Exam04Controller {
@@ -23,6 +24,10 @@ public class Exam04Controller {
 		return "exam04";
 	}
 
+	/**
+	 * ユーザーオブジェクトに入力情報入れる
+	 * オブジェクトをflashスコープに移し、結果をリダイレクトで表示
+	 * */
 	@RequestMapping("/result")
 	public String result(@Validated UserForm userForm,
 			BindingResult result,RedirectAttributes redirectAttributes,Model model) {
@@ -38,6 +43,7 @@ public class Exam04Controller {
 		return "redirect:/exam04/result2";
 	}
 	
+	/**入力画面表示*/
 	@RequestMapping("/result2")
 	public String result2() {
 		return "exam04-result";
