@@ -4,7 +4,6 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -26,6 +25,7 @@ public class Exam02Controller {
 		return "exam02";
 	}
 
+	/**exam02.htmlで入力した数字を計算*/
 	@RequestMapping("/result")
 	public String result(Integer num1, Integer num2) {
 		session.setAttribute("num1", num1);
@@ -33,7 +33,8 @@ public class Exam02Controller {
 		session.setAttribute("result", num1 + num2);
 		return "exam02-result";
 	}
-
+	
+	/**exam02-result.htmlからの画面遷移*/
 	@RequestMapping("/result2")
 	public String result2() {
 
