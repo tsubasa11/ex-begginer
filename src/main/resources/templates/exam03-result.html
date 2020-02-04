@@ -8,9 +8,9 @@
 合計金額<br>
 ■税抜き価格<br>
 <!--計算結果-->
-<span th:text="${application.result}"></span>円<br>
+<span th:text="${#numbers.formatInteger(application.total,2,'COMMA')}"></span>円<br>
 ■税込価格<br>
 <!--計算結果-->
-<span th:text="${application.resultInTax}"></span>円<br>
+<span th:text="${#numbers.formatInteger(application.totalInTax,2,'COMMA')}"></span>円<br>
 </body>
 </html>

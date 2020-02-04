@@ -7,9 +7,12 @@
 <body>
 <h1>ユーザー登録</h1>
 <form method="post" th:action="@{/exam04/result}" th:object="${userForm}">
+<div th:errors="*{name}"></div>
 名前：<input type="text" name="name" th:field="*{name}"><br>
+<div th:errors="*{age}"></div>
 年齢：<input type="text" name="age" th:field="*{age}"><br>
 コメント：<br>
+<div th:errors="*{comment}"></div>
 <textarea name="comment" th:field="*{comment}"></textarea><br>
 <button>登録</button>
 </form>

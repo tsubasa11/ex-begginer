@@ -27,8 +27,9 @@ public class Exam03Controller {
 	/**exam03.htmlで入力された合計金額を表示*/
 	@RequestMapping("/result")
 	public String result(Integer item1, Integer item2, Integer item3) {
-		application.setAttribute("result",(int)(item1+item2+item3));
-		application.setAttribute("resultInTax", (int)((item1+item2+item3)*1.1));
+		int total = item1+item2+item3;
+		application.setAttribute("total",total);
+		application.setAttribute("totalInTax", total*1.1);
 		
 		return "exam03-result";
 	}

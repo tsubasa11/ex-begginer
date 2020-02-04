@@ -1,9 +1,13 @@
 package ex.example;
 
-public class UserForm {
+import javax.validation.constraints.NotBlank;
 
+public class UserForm {
+	@NotBlank(message="入力してください")
 	private String name;
+	@NotBlank(message="入力してください")
 	private String age;
+	@NotBlank(message="入力してください")
 	private String comment;
 
 	public String getName() {
