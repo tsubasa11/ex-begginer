@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -14,13 +15,12 @@ public class User1Controller {
 	private User1Form repository;
 	
 	@RequestMapping("")
-	public String index() {
+	public String index(Model model) {
+		List<User1> nameList=repository.findByName("ロー");
 		
-		List<User1> list=repository.findByName("ロー");
-		for(User1 name:list) {
-			System.out.println(name.getName());
-		}
-		return "finished";
+		model.addAttribute("nameList", nameList);
+
+		return "exam5-result";
 	}
 	
 

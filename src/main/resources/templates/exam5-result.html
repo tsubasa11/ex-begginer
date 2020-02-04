@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+検査結果<br>
+<span th:each="name:${nameList}">
+<span th:text="${name.name}"></span><br>
+</span>
+</body>
+</html>
